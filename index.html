@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Track</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble" style="left:10%; animation-delay:0s;"></div>
+        <div class="bubble" style="left:25%; animation-delay:2s;"></div>
+        <div class="bubble" style="left:40%; animation-delay:4s;"></div>
+        <div class="bubble" style="left:60%; animation-delay:1s;"></div>
+        <div class="bubble" style="left:75%; animation-delay:3s;"></div>
+        <div class="bubble" style="left:85%; animation-delay:3.5s;"></div>
+    </div>
+
+    <!-- Welcome Screen-->
+    <div class="welcome-screen">
+        <h1>💧💙AQUA TRACK💙💧</h1>
+        <p>💧💧Stay refreshed, every sip counts!!💙💙</p>
+        <button onclick="startApp()">Get Started</button>
+    </div>
+    <!-- Dashboard-->
+     <div class="dashboard" style="display: none">
+        <h1>💧💙AQUA TRACK💙💧</h1>
+        <h4>🏠  HOME</h4>
+        <div class="tracker">
+            <div class="circle-container">
+                <div class="circle-fill" id="circleFill"></div>
+                <div class="circle-text">
+                    <div id="circlePercent">0%</div>
+                    <div><span id="water-intake">0</span> / <span id="goal-value">2000</span> ml</div>
+                </div>
+            </div>
+            <button onclick="addWater()">+ Add Water</button>
+        </div>
+     </div>
+     <!-- Settings page-->
+      <div class="settings" style="display: none">
+        <h1>💧💙AQUA TRACK💙💧</h1>
+        <h2>⚙️  SETTINGS</h2>
+        <label>🎯Daily Goal (in ml): </label><br>
+        <input type="number" id="goalInput" placeholder="Enter your goal in ml🎯">
+        <button onclick="saveSettings()">⬇️Save</button>
+        <button onclick="resetSettings()">🔁Reset</button>
+        <button onclick="goTo('dashboard')">⬅️Back</button>
+      </div>
+      <!-- History page-->
+       <div class="history" style="display: none">
+        <h1>💧💙AQUA TRACK💙💧</h1>
+        <h2>🚰  INTAKE HISTORY (PAST 7 DAYS)</h2>
+        <ul id="historyList"></ul>
+        <button onclick="goTo('dashboard')">⬅️Back</button>
+       </div>
+       <!-- Navigation-->
+        <div class="nav" id="navbar">
+            <button onclick="goTo('dashboard')">🏠</button>
+            <button onclick="goTo('history')">🚰</button>
+            <button onclick="goTo('settings')">⚙️</button>
+        </div>
+     <script src="script.js"></script>
+</body>
+
+</html>
