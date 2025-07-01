@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to top, #90e0ef, #caf0f8);
+  overflow: hidden;
+  position: relative;
+  color: #023047;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Welcome Screen Container */
+.welcome-screen {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Welcome Text */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-screen p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Start Button */
+.welcome-screen button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: #00b4d8;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.welcome-screen button:hover {
+  background-color: #0077b6;
+}
+
+/* Bubbles background */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bubble  {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgb(20, 179, 207);
+  bottom: -40px;
+  border-radius: 50%;
+  animation: bubbleUp 10s infinite ease-in;
+}
+
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .welcome-screen {
+    padding: 1.5rem;
+  }
+
+  .welcome-screen header {
+    font-size: 1.5rem;
+  }
+
+  .welcome-screen p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-screen button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-screen {
+    width: 90%;
+  }
+}
+.dashboard {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 500px;
+  margin: 2rem auto;
+  position: relative;
+}
+.tracker {
+  margin-top: 2rem;
+}
+
+.circle-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem auto;
+  background: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 150, 200, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.circle-fill{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to top, #48cae4, #0096c7);
+  border-radius: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: height 0.4s ease-in-out; 
+}
+.circle-text{
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.95rem;
+  color: black;
+}
+#circlePercent{
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+.tracker button {
+  padding: 0.6rem 1.6rem;
+  font-size: 1.5rem;
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tracker button:hover {
+  background-color: #0077b6;
+}
+.settings {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 500px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.settings h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+.settings label {
+  font-size: 1rem;
+  color: #023047;
+}
+
+.settings input {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #90e0ef;
+  margin: 1rem 0;
+  width: 200px;
+}
+
+.settings button {
+  margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background: #00b4d8;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.settings button:hover {
+  background: #0077b6;
+}
+.nav {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.nav button {
+  padding: 0.5rem 1.2rem;
+  background-color: #90e0ef;
+  border: none;
+  border-radius: 20px;
+  color: #023047;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav button:hover {
+  background-color: #00b4d8;
+  color: white;
+}
+.history {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 500px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.history h2 {
+  font-size: 1.4rem;
+  color: #0077b6;
+  margin-bottom: 1rem;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+#historyList li {
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 70%;
+  border-radius: 15px;
+  color: #023047;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.history button {
+  padding: 0.5rem 1.2rem;
+  background: #00b4d8;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.history button:hover {
+  background: #0077b6;
+}
