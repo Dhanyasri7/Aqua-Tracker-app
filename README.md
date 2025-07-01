@@ -36,6 +36,7 @@ AquaTrack is a fun and interactive web application that helps users monitor and 
 ## 📷 Screenshots
 
 ```markdown
-![Welcome Screen](screenshots/welcome-screen.png)
-![Dashboard](screenshots/dashboard.png)
-![History](screenshots/history.png)
+![Welcome Screen](screenshots/welcome-page.jpeg)
+![Dashboard](screenshots/home-page.jpeg)
+![History](screenshots/history-page.jpeg)
+![Settings](screenshots/settings-page.jpeg)
