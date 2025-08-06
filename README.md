@@ -3,6 +3,10 @@
 AquaTrack is a fun and interactive web application that helps users monitor and manage their daily water intake. With a customized bubbly UI and smooth animations, AquaTrack turns hydration tracking into a delightful experience.
 
 ---
+## 🖼️ Demo
+🔗 [Live Demo](https://dhanyasri7.github.io/Aqua-Tracker-app/)  
+
+---
 
 ## 📌 Project Overview
 
