@@ -136,34 +136,45 @@ window.onload = function() {
   requestNotificationPermission();
 };
 
-
 let reminderInterval;
 
 document.getElementById("startReminder").addEventListener("click", () => {
-    let hours = parseInt(document.getElementById("interval").value);
-    if (isNaN(hours) || hours < 1) {
-        alert("⚠️ Please enter a valid reminder interval in hours.");
-        return;
-    }
+  let hours = parseInt(document.getElementById("hours").value) || 0;
+  let minutes = parseInt(document.getElementById("minutes").value) || 0;
 
-    let ms = hours * 60 * 60 * 1000; // convert hours to ms
-    clearInterval(reminderInterval); // stop any previous reminders
+  if (hours === 0 && minutes === 0) {
+    alert("⚠️ Please enter a valid reminder interval.");
+    return;
+  }
 
-    if (Notification.permission !== "granted") {
-        Notification.requestPermission();
-    }
+  let ms = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000);
 
-    reminderInterval = setInterval(() => {
-        if (Notification.permission === "granted") {
-            new Notification("💧 AquaTrack Reminder", {
-                body: `Time to drink water! (${hours} hour interval)`,
-                icon: "https://www.shutterstock.com/image-vector/drink-water-concept-flat-vector-600nw-1315876652.jpg"
-            });
-        }
-    }, ms);
+  clearInterval(reminderInterval); // Stop any previous reminders
 
-    alert(`🔔 Reminder started! You'll get a notification every ${hours} hour(s).`);
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        startReminder(ms, hours, minutes);
+      }
+    });
+  } else {
+    startReminder(ms, hours, minutes);
+  }
 });
+
+function startReminder(ms, hours, minutes) {
+  reminderInterval = setInterval(() => {
+    if (Notification.permission === "granted") {
+      new Notification("💧 AquaTrack Reminder", {
+        body: `Time to drink water!🔔`,
+        icon: "https://www.shutterstock.com/image-vector/drink-water-concept-flat-vector-600nw-1315876652.jpg"
+      });
+    }
+  }, ms);
+
+  alert(`🔔 Reminder started! You'll get a notification every ${hours} hour(s) and ${minutes} minute(s).`);
+}
+
 
 
 
