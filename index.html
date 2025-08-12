@@ -49,6 +49,11 @@
         <button onclick="saveSettings()">⬇️Save</button>
         <button onclick="resetSettings()">🔁Reset</button>
         <button onclick="goTo('dashboard')">⬅️Back</button>
+        
+        <label for="interval">🔔Reminder Interval (hours):</label>
+        <input type="number" id="interval" min="0" max="12" value="" placeholder="Enter in hours🔔">
+        <button id="startReminder">Set Reminder</button>
+
       </div>
       <!-- History page-->
        <div class="history" style="display: none">

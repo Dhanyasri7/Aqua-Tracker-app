@@ -123,25 +123,47 @@ function showHistory(){
 }
 
 function requestNotificationPermission() {
-  if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
-  } else if (Notification.permission === "granted") {
-    scheduleNotification();
-  } else if (Notification.permission !== "denied") {
+  if ('Notification' in window) {
     Notification.requestPermission().then(permission => {
-      if (permission === "granted") {
-        scheduleNotification();
-      }
+      console.log("Notification permission:", permission);
     });
+  } else {
+    console.log("This browser does not support notifications.");
   }
 }
 
-function scheduleNotification() {
-    setTimeout(() => {
-        new Notification("AquaTrack Reminder", {
-            body: "Time to drink some water! 💧 Stay hydrated!",
-            icon: "https://www.shutterstock.com/image-vector/drink-water-concept-flat-vector-600nw-1315876652.jpg",
-        });
-    scheduleNotification();
-  }, 3600000); //1 hour
-}
+window.onload = function() {
+  requestNotificationPermission();
+};
+
+
+let reminderInterval;
+
+document.getElementById("startReminder").addEventListener("click", () => {
+    let hours = parseInt(document.getElementById("interval").value);
+    if (isNaN(hours) || hours < 1) {
+        alert("⚠️ Please enter a valid reminder interval in hours.");
+        return;
+    }
+
+    let ms = hours * 60 * 60 * 1000; // convert hours to ms
+    clearInterval(reminderInterval); // stop any previous reminders
+
+    if (Notification.permission !== "granted") {
+        Notification.requestPermission();
+    }
+
+    reminderInterval = setInterval(() => {
+        if (Notification.permission === "granted") {
+            new Notification("💧 AquaTrack Reminder", {
+                body: `Time to drink water! (${hours} hour interval)`,
+                icon: "https://www.shutterstock.com/image-vector/drink-water-concept-flat-vector-600nw-1315876652.jpg"
+            });
+        }
+    }, ms);
+
+    alert(`🔔 Reminder started! You'll get a notification every ${hours} hour(s).`);
+});
+
+
+
