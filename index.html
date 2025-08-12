@@ -18,14 +18,17 @@
 
     <!-- Welcome Screen-->
     <div class="welcome-screen">
-        <h1>💧💙AQUA TRACK💙💧</h1>
-        <p>💧💧Stay refreshed, every sip counts!!💙💙</p>
+        <h1>💧AQUA TRACK💧</h1>
+        <p>💧💧Stay refreshed, every sip counts!!💧💧</p>
         <button onclick="startApp()">Get Started</button>
     </div>
     <!-- Dashboard-->
      <div class="dashboard" style="display: none">
-        <h1>💧💙AQUA TRACK💙💧</h1>
-        <h4>🏠  HOME</h4>
+        <h1>💧AQUA TRACK💧</h1>
+        <div class="icon-text">
+          <img src="https://static.vecteezy.com/system/resources/previews/026/782/223/non_2x/cartoon-drawing-of-drinking-water-vector.jpg" alt="Water Icon" class="small-icon" />
+          <span>Stay hydrated, keep track of your water intake!</span>
+        </div>
         <div class="tracker">
             <div class="circle-container">
                 <div class="circle-fill" id="circleFill"></div>
@@ -39,7 +42,7 @@
      </div>
      <!-- Settings page-->
       <div class="settings" style="display: none">
-        <h1>💧💙AQUA TRACK💙💧</h1>
+        <h1>💧AQUA TRACK💧</h1>
         <h2>⚙️  SETTINGS</h2>
         <label>🎯Daily Goal (in ml): </label><br>
         <input type="number" id="goalInput" placeholder="Enter your goal in ml🎯">
@@ -49,7 +52,7 @@
       </div>
       <!-- History page-->
        <div class="history" style="display: none">
-        <h1>💧💙AQUA TRACK💙💧</h1>
+        <h1>💧AQUA TRACK💧</h1>
         <h2>🚰  INTAKE HISTORY (PAST 7 DAYS)</h2>
         <ul id="historyList"></ul>
         <button onclick="goTo('dashboard')">⬅️Back</button>

@@ -2,6 +2,7 @@ window.onload = () =>{
     checkReset();
     updateIntake();
     showHistory();
+    requestNotificationPermission();
 }
 
 function startApp(){
@@ -119,4 +120,28 @@ function showHistory(){
         list.appendChild(li);
     });
     console.log("Updated history:",history);
+}
+
+function requestNotificationPermission() {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  } else if (Notification.permission === "granted") {
+    scheduleNotification();
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        scheduleNotification();
+      }
+    });
+  }
+}
+
+function scheduleNotification() {
+    setTimeout(() => {
+        new Notification("AquaTrack Reminder", {
+            body: "Time to drink some water! 💧 Stay hydrated!",
+            icon: "https://www.shutterstock.com/image-vector/drink-water-concept-flat-vector-600nw-1315876652.jpg",
+        });
+    scheduleNotification();
+  }, 3600000); //1 hour
 }
