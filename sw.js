@@ -1,11 +1,11 @@
 const CACHE_NAME = 'aqua-track-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
-  '/icon.png'
+  '/Aqua-Tracker-app/',
+  '/Aqua-Tracker-app/index.html',
+  '/Aqua-Tracker-app/style.css',
+  '/Aqua-Tracker-app/script.js',
+  '/Aqua-Tracker-app/manifest.json',
+  '/Aqua-Tracker-app/icon.png'
 ];
 
 // Install event: cache files

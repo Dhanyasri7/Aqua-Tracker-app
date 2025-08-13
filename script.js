@@ -176,7 +176,7 @@ function startReminder(ms, hours, minutes) {
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js')
+  navigator.serviceWorker.register('/Aqua-Tracker-app/sw.js')
   .then(() => console.log('Service Worker registered'))
   .catch(err => console.log('Service Worker registration failed:', err));
 }
