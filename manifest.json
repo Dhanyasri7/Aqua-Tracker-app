@@ -4,5 +4,12 @@
   "start_url": "/Aqua-Tracker-app/",
   "display": "standalone",
   "background_color": "#caf0f8",
-  "theme_color": "#00b4d8"
+  "theme_color": "#00b4d8",
+  "icons": [
+  {
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+]
 }

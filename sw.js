@@ -5,6 +5,7 @@ const urlsToCache = [
   '/style.css',
   '/script.js',
   '/manifest.json',
+  '/icon.png'
 ];
 
 // Install event: cache files
