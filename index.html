@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#00b4d8" />
+
     <title>Aqua Track</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -50,7 +53,7 @@
         <button onclick="resetSettings()">🔁Reset</button>
         <button onclick="goTo('dashboard')">⬅️Back</button>
         
-        <label for="interval">🔔Reminder Interval (hours):</label>
+        <label for="interval">🔔Reminder Interval (hours):</label><br>
         <input type="number" id="hours" min="0" max="12" value="" placeholder="Enter in hours🔔">
         <input type="number" id="minutes" min="0" max="59" value="" placeholder="Enter in minutes🔔">
         <button id="startReminder">Set Reminder</button>

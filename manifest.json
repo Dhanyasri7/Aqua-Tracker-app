@@ -1,0 +1,8 @@
+{
+  "name": "Aqua Track",
+  "short_name": "AquaTrack",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#caf0f8",
+  "theme_color": "#00b4d8"
+}

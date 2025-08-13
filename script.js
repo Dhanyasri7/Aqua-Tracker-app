@@ -175,6 +175,13 @@ function startReminder(ms, hours, minutes) {
   alert(`🔔 Reminder started! You'll get a notification every ${hours} hour(s) and ${minutes} minute(s).`);
 }
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+  .then(() => console.log('Service Worker registered'))
+  .catch(err => console.log('Service Worker registration failed:', err));
+}
+
+
 
 
 
